@@ -1,0 +1,43 @@
+{% extends 'basic2.html' %}
+
+{% block content %}
+
+
+<div class="container">
+  <h2 style="text-align: center; background-color: green; color : white; height: 50px; padding-top: 8px;">User Report</h2>
+  <table class="table table-condensed table-bordered table-hover table-responsive">
+    <thead style="font-size: 18px;">
+      <tr class="info">
+        <th style="background-color:rgb(64,64,64); color : white">S.NO</th>
+
+        <th style="background-color:rgb(64,64,64); color : white">First Name</th>
+        <th style="background-color:rgb(64,64,64); color : white">Last Name</th>
+        <th style="background-color:rgb(64,64,64); color : white">Login ID</th>
+        <th style="background-color:rgb(64,64,64); color : white">Password</th>
+        <th style="background-color:rgb(64,64,64); color : white">Action</th>
+      </tr>
+    </thead>
+    <tbody style="font-size: 16px; font-weight: bold">
+
+      {% for datas in data %}
+
+      <tr>
+        <td>{{ datas.id }}</td>
+        <td>{{ datas.first_name }}</td>
+        <td>{{ datas.last_name }}</td>
+        <td>{{ datas.username }}</td>
+        <td>{{ datas.password }}</td>
+        <td>
+          <a href="/admin_user_edit/{{ datas.id }}"><span  class="btn btn-success">Edit</span></a>
+          <a href="/delete_user/{{ datas.id }}"><span  class="btn btn-danger">Delete</span>
+          </a>        
+        </td>
+
+      {% endfor %}
+
+      </tr>
+    </tbody>
+  </table>
+</div><br>
+
+{% endblock %}

@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    
+    <title></title>
+
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <script type="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'jquery/jquery-3.4.0.js' %}"></script>
+    <script src="{% static 'jquery/bootstrap.min.js' %}"></script>
+    <title></title>
+</head>
+
+<body>
+
+    <!-- ==================== NAVIGATION BAR CODING START ================================= -->
+
+    <div class="container-fluid" style="background-color: #F5FFFA">
+        <div class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand"
+                    style="font-size: 28px; margin-left: 30px; margin-right: 20px; color : white">Student Information
+                    System</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="menu">
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="http://127.0.0.1:8000/">
+                            <span class="glyphicon glyphicon-home"></span> Home</a>
+                        </li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="http://127.0.0.1:8000/dashboard/">Dashboard</a></li>
+                        <!-- for back the dashboard -->
+                        {% block content2 %}{% endblock %}
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><b>My Account</b> <span class="glyphicon glyphicon-log-in"></span> </a></li>
+                        <li><a href="#">Log-Out <span class="glyphicon glyphicon-log-out"></span> </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+                {% block content %}
+                
+                {% endblock %}
+                
+                <!-- The content of your page would go here. -->
+                    <footer class="footer-distributed" style="margin-top: 0px;">
+                        <div class="footer-left">
+                            <h3>Student<span>Information System</span></h3>
+                            <p class="footer-links">
+                                <a href="#">Home</a>
+                                |
+                                <a href="#">Blog</a>
+                                |
+                                <a href="#">About</a>
+                                |
+                                <a href="#">Contact</a>
+                            </p>
+                            <p class="footer-company-name">© 2019 Eduonix Learning Solutions Pvt. Ltd.
+                            </p>
+                        </div>
+                
+                        <div class="footer-center">
+                            <div>
+                                <i class="fa fa-map-marker"></i>
+                                <p><span>309 - Rupa Solitaire, Bldg. No. A - 1, Sector - 1</span>
+                                    Mahape, Navi Mumbai - 400710
+                                </p>
+                            </div>
+                            <div>
+                                <i class="fa fa-phone"></i>
+                                <p>+91 22-27782183</p>
+                            </div>
+                            <div>
+                                <i class="fa fa-envelope"></i>
+                                <p><a href="mailto:support@eduonix.com">support@eduonix.com</a></p>
+                            </div>
+                        </div>
+                        <div class="footer-right">
+                            <p class="footer-company-about">
+                                <span>About the company</span>
+                                We offer training and skill building courses across Technology, Design, Management, Science and
+                                Humanities.</p>
+                            <div class="footer-icons">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="#"><i class="fa fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+                
+                
+                <style>
+                    * {
+                        box-sizing: border-box;
+                    }
+                
+                    /* Create three equal columns that floats next to each other */
+                    .column {
+                        float: left;
+                        width: 30.33%;
+                        padding: 10px;
+                        height: 230px;
+                        margin: 10px;
+                        /* Should be removed. Only for demonstration */
+                    }
+                
+                    /* Clear floats after the columns */
+                    .row:after {
+                        content: "";
+                        display: table;
+                        clear: both;
+                    }
+                
+                    .row {
+                        width: 1150px;
+                        height: 250;
+                        margin-left: 120px;
+                    }
+                
+                    h1 {
+                        text-align: center;
+                        color: grey;
+                        margin-top: -5px;
+                    }
+                
+                    .column2 {
+                        float: left;
+                        width: 50%;
+                        padding: 10px;
+                        height: 300px;
+                        /* Should be removed. Only for demonstration */
+                    }
+                
+                    .row2 {
+                        margin-top: 120px;
+                    }
+                
+                    /* Clear floats after the columns */
+                    .row2:after {
+                        content: "";
+                        display: table;
+                        clear: both;
+                    }
+                </style>
+                <!-- ============================= CAROUSEL CLASS CODING END============ -->
+                
+                </body>
+                
+                </html>

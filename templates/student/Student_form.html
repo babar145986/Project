@@ -1,0 +1,63 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+
+        <div class="main">
+            Student Login
+        </div>
+        <div class="login">
+            <div class="login-form form-responsive">
+                <form action="/student_login_real/" method="post">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text" class="form-control" name="username" placeholder="Email">
+                    </div><br>
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input type="password" class="form-control" name="password" placeholder="Password">
+                    </div><br>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Log in</button>
+                    </div>
+
+                    <div class="clearfix">
+                        <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
+                        <a href="#" class="pull-right">Forgot Password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <style>
+            .login-form {
+                width: 780px;
+                margin: 50px auto;
+            }
+        
+            .login-form form {
+                margin-bottom: 20px;
+                background: #DEB887;
+                box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+                padding: 25px;
+            }
+        
+            .login-form h2 {
+                margin: 0 0 15px;
+            }
+        
+            .form-control,
+            .btn {
+                min-height: 48px;
+                border-radius: 2px;
+            }
+        
+            .btn {
+                font-size: 20px;
+                font-weight: bold;
+            }
+        </style>
+        <!-- The content of your page would go here. -->
+
+{% endblock %}

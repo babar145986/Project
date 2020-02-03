@@ -1,0 +1,44 @@
+{% extends 'basic2.html' %}
+
+{% block content %}
+
+<div class="main">
+    Add Assignment
+</div>
+        
+        
+<div class="container">
+    <h3 style="text-align: center;background-color: green; color : white; padding: 12px"> Add New Assignment </h3>
+
+    <form action="/admin_assignment_edit/" method="post">
+        <input type="hidden" name="id" id='id' required maxlength="20" value="{{ data.id }}">
+        {% csrf_token %}
+        <div class="form-group col-md-6">
+            <label for="subject">Subject Name</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Subject Name" name="subject" value="{{data.subject_name}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="date">Due Date</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Due Date" name="date" value="{{ data.due_date }}">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="assignment">Assignment Title</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Assignment Title" name="assignment" value="{{ data.assignment_title }}">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="teacher">Teacher Name</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Teacher Name" name="teacher" value="{{ data.teacher_name }}">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="submission date">Submission Date</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Submission Date" name="submission" value="{{ data.submission_date }}">
+        </div>
+        <div class="form-group col-lg-12">
+            <button type="submit" class="btn btn-primary btn-block btn-lg">
+            Submit </button>
+        </div>
+    </form>
+
+</div>
+    
+{% endblock %}

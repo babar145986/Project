@@ -1,0 +1,42 @@
+{% extends 'basic2.html' %}
+
+{% block content2 %}
+<li><a href="#">Administrator</a></li>
+<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Reports<span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="#">Assignment Report</a></li>
+        <li><a href="#">Subject Report</a></li>
+        <li><a href="#">Attendance Report</a></li>
+        <li><a href="#">User Report</a></li>
+        <li><a href="#">Student Report</a></li>
+        <li><a href="#">My Account</a></li>
+        <li><a href="#">Change Password</a></li>
+    </ul>
+</li>
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="main"> 
+      Student Dashboard 
+    </div>
+
+    <!-- ============================= NAVIGATION BAR CODING END ================================ -->
+<div class="button-class">
+
+    <a href="http://127.0.0.1:8000/table_subject/"><button type="button" class="btn btn-secondary btn-circle btn-xl"> My <br> Subjects</button></a>
+
+    <a href="http://127.0.0.1:8000/table_assignment/"><button type="button" class="btn btn-secondary btn-circle btn-xl"> My <br> Assignment</button></a>
+
+    <a href="http://127.0.0.1:8000/table_attendance/"><button type="button" class="btn btn-secondary btn-circle btn-xl"> My <br> Attendance </button></a>
+
+    <a href="http://127.0.0.1:8000/admin_account/"><button type="button" class="btn btn-secondary btn-circle btn-xl">My <br> Account</button></a>
+
+    <a href="http://127.0.0.1:8000/admin_password/"><button type="button" class="btn btn-secondary btn-circle btn-xl">Change <br> Password</button></a>
+
+    <a href="#"><button type="button" class="btn btn-secondary btn-circle btn-xl">Logout</button></a>
+
+</div><br>
+<!-- The content of your page would go here. -->
+{% endblock %}

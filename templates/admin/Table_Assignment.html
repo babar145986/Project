@@ -1,0 +1,43 @@
+{% extends 'basic2.html' %}
+
+{% block content %}
+
+
+<div class="container">
+  <h2 style="text-align: center; background-color: green; color : white; height: 50px; padding-top: 8px;">Assignment Report</h2>
+  <table class="table table-condensed table-bordered table-hover table-responsive table-lg" >
+    <thead style="font-size: 18px;">
+      <tr class="info">
+        <th style="background-color:rgb(64,64,64); color : white">S.No</th>
+        <th style="background-color:rgb(64,64,64); color : white">Subject Name</th>
+        <th style="background-color:rgb(64,64,64); color : white">Due Date</th>
+        <th style="background-color:rgb(64,64,64); color : white">Assignment Title</th>
+        <th style="background-color:rgb(64,64,64); color : white">Teacher Name</th>
+        <th style="background-color:rgb(64,64,64); color : white">Submission Date</th>
+        <th style="background-color:rgb(64,64,64); color : white">Action</th>
+      </tr>
+    </thead>
+    <tbody style="font-size: 16px; font-weight: bold">
+
+      {% for datas in data %}
+
+      <tr>
+        <td>{{ datas.id }}</td>
+        <td>{{ datas.subject_name }}</td>
+        <td>{{ datas.due_date }}</td>
+        <td>{{ datas.assignment_title }}</td>
+        <td>{{ datas.teacher_name }}</td>
+        <td>{{ datas.submission_date }}</td>
+        <td>
+          <a href="/admin_assignment_edit/{{ datas.id }}"><span  class="btn btn-success">Edit</span></a>
+          <a href="/delete/{{ datas.id }}"><span  class="btn btn-danger">Delete</span></a>
+        </td>
+
+      {% endfor %}
+
+      </tr>
+    </tbody>
+  </table>
+</div><br>
+
+{% endblock %}

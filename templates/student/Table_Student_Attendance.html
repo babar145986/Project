@@ -1,0 +1,43 @@
+{% extends 'basic2.html' %}
+
+{% block content %}
+
+
+<div class="container">
+  <h2 style="text-align: center; background-color: green; color : white; height: 50px; padding-top: 8px;">Attendance Report</h2>
+  <table class="table table-condensed table-bordered table-hover table-responsive">
+    <thead style="font-size: 18px;" class="thead-dark">
+      <tr class="info">
+        <th style="background-color:rgb(64,64,64); color : white">S.No</th>
+        <th style="background-color:rgb(64,64,64); color : white">Subject Name</th>
+        <th style="background-color:rgb(64,64,64); color : white">Student Name</th>
+        <th style="background-color:rgb(64,64,64); color : white">Lecture Title</th>
+        <th style="background-color:rgb(64,64,64); color : white">Date</th>
+        <th style="background-color:rgb(64,64,64); color : white">Description</th>
+        <th style="background-color:rgb(64,64,64); color : white">Action</th>
+      </tr>
+    </thead>
+    <tbody style="font-size: 16px; font-weight: bold">
+
+      {% for datas in data %}
+
+      <tr>
+        <td>{{ datas.id }}</td>
+        <td>{{ datas.subject_name }}</td>
+        <td>{{ datas.student_name }}</td>
+        <td>{{ datas.lecture_title }}</td>
+        <td>{{ datas.date }}</td>
+        <td>{{ datas.description }}</td>
+        <td>
+          <a href="/edit/{{ datas.id }}"><span  class="btn btn-success">Edit</span></a>
+          <a href="/delete_attendance/{{ datas.id }}"><span  class="btn btn-danger">Delete</span>
+        </td>
+
+      {% endfor %}
+
+      </tr>
+    </tbody>
+  </table>
+</div><br>
+
+{% endblock %}

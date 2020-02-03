@@ -1,0 +1,47 @@
+{% extends 'basic2.html' %}
+
+{% block content %}
+
+<div class="main">
+    Add User
+</div>
+        
+        
+<div class="container">
+    <h3 style="text-align: center;background-color: green; color : white; padding: 12px"> Add New User </h3>
+
+    <form action="/data_save_user/" method="post">
+        {% csrf_token %}
+        <div class="form-group col-md-6">
+            <label for="date">User First Name</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="First Name" name="first">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="assignment">User Last Name</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Last Name" name="last">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="teacher">Login ID</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Login ID" name="id">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="submission date">Password</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Password" name="password">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="submission date">Confirm Password</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Password" name="confirm">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="submission date">User Email</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Password" name="email">
+        </div>
+        <div class="form-group col-lg-12">
+            <button type="submit" class="btn btn-primary btn-block btn-lg">
+            Submit </button>
+        </div>
+    </form>
+
+</div>
+    
+{% endblock %}

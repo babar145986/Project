@@ -1,0 +1,48 @@
+{% extends 'basic2.html' %}
+
+{% block content %}
+
+<div class="main">
+    Update User
+</div>
+        
+        
+<div class="container">
+    <h3 style="text-align: center;background-color: green; color : white; padding: 12px"> Update User </h3>
+
+    <form action="/admin_user_data_update/{{ data.id }}" method="post">
+        <input type="hidden" name="id" id="id" required maxlength="20" value="{{ data.id }}"/>
+        {% csrf_token %}
+        <div class="form-group col-md-6">
+            <label for="subject">User Role</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="User Role" name="role" value="{{data.user_role}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="class">Class</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Class" name="class" value="{{data.user_class}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="date">User First Name</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="First Name" name="first" value="{{data.first_name}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="assignment">User Last Name</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Last Name" name="last" value="{{data.last_name}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="teacher">Login ID</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Login ID" name="login_id" value="{{data.login_id}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="submission date">Password</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Password" name="password" value="{{data.password}}">
+        </div>
+        <div class="form-group col-lg-12">
+            <button type="submit" class="btn btn-primary btn-block btn-lg">
+            Submit </button>
+        </div>
+    </form>
+
+</div>
+    
+{% endblock %}
